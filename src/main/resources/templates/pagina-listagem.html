@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Linha de Pesquisa</th>
+      <th scope="col">Professor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "candidato : ${candidatos}">
+      <td th:text="${candidato.nome}"></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
