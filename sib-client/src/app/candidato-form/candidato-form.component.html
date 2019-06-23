@@ -1,0 +1,53 @@
+<div class="content-area">
+  <div class="row">
+    <div class="col-md-12">
+      <form clrForm clrLayout="vertical">
+        <clr-input-container>
+          <label>CPF: </label>
+          <input clrInput type="text" [(ngModel)]="candidato.cpf" name="cpf" required />
+          <clr-control-error>Este campo é obrigatório</clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+          <label>Nome: </label>
+          <input clrInput type="text" [(ngModel)]="candidato.nome" name="nome" required />
+          <clr-control-error>Este campo é obrigatório</clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+          <label>E-mail: </label>
+          <input clrInput type="email" [(ngModel)]="candidato.email" name="email" required />
+          <clr-control-error>Este campo é obrigatório</clr-control-error>
+        </clr-input-container>
+        <clr-select-container>
+          <label>Sexo: </label>
+          <select clrSelect name="sexo" [(ngModel)]="candidato.sexo">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Não deseja informar">Não deseja informar</option>
+          </select>
+          <!-- <input clrInput type="email" [(ngModel)]="candidato.sexo" name="sexo" required /> -->
+          <clr-control-error>Este campo é obrigatório</clr-control-error>
+        </clr-select-container>
+        <clr-select-container>
+          <label>Linha de pesquisa: </label>
+          <select clrSelect name="linhaDePesquisa" [(ngModel)]="linhaSelecionada">
+            <option *ngFor="let linha of linhasDePesquisa" (value)="linha.id">{{linha.name}}</option>
+          </select>
+          <clr-control-error>Este campo é obrigatório</clr-control-error>
+        </clr-select-container>
+        <clr-input-container>
+          <label>Data de nascimento: </label>
+          <input clrInput type="date" [(ngModel)]="candidato.dataNascimento" name="dataNascimento" required />
+          <clr-control-error>Este campo é obrigatório</clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+          <label>Curriculum: </label>
+          <input clrInput type="file" [(ngModel)]="candidato.dataNascimento" name="dataNascimento" required
+            (change)="selectFile($event)" />
+          <clr-control-error>Este campo é obrigatório</clr-control-error>
+        </clr-input-container>
+        <br>
+        <button class="btn btn-primary" (click)="insert()">Submeter inscrição!</button>
+      </form>
+    </div>
+  </div>
+</div>
